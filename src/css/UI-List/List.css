@@ -1,0 +1,8 @@
+.List-Product {
+  width: 70%;
+  margin: 5px auto;
+  list-style: none;
+  background-color: rgb(238, 238, 238);
+  padding: 15px 20px;
+  border-radius: 10px;
+}

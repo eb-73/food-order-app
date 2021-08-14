@@ -1,0 +1,9 @@
+.items-product {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(190, 190, 190);
+
+  padding: 12px 0;
+}

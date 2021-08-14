@@ -1,0 +1,15 @@
+li.Modal-items {
+  width: 100%;
+  max-height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+  border-bottom: 2px solid rgb(192, 0, 0);
+}
+div.buttons-item {
+  width: 130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

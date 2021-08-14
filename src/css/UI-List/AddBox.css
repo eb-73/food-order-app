@@ -1,0 +1,28 @@
+.form-add {
+  width: 120px;
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.form-add div {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+.form-add input {
+  width: 45px;
+}
+.form-add button {
+  width: 80px;
+  height: 30px;
+  background-color: rgb(170, 0, 0);
+  color: rgb(218, 218, 218);
+  border: none;
+  border-radius: 9px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}

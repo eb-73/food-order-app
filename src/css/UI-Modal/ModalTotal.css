@@ -1,0 +1,12 @@
+.total-amount {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+.total-amount h2:nth-child(2) {
+  font-size: 30px;
+  font-weight: bolder;
+}

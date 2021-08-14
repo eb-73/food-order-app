@@ -1,0 +1,30 @@
+.modal-items-content {
+  width: 100px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  user-select: none;
+}
+.modal-items-content h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.modal-items-content h4 {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(190, 0, 0);
+}
+.modal-items-content div {
+  font-size: 18px;
+  height: 22px;
+  width: 30px;
+  border-radius: 2px;
+  border: 1px solid rgb(114, 0, 0);
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

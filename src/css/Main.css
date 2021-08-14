@@ -1,0 +1,36 @@
+.main {
+  width: 100%;
+  height: 450px;
+  user-select: none;
+}
+div.pic-wave {
+  position: relative;
+  background-image: url("../img/image.jpg");
+  background-size: 100%;
+  background-position-y: center;
+  width: 100%;
+  height: 400px;
+  margin: 70px auto 0px;
+}
+.pic-wave svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.about-foods {
+  position: relative;
+  margin: 0px auto;
+  bottom: 150px;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 7px;
+  width: 600px;
+  height: 150px;
+  background-color: #363636;
+  color: rgb(218, 218, 218);
+  box-shadow: rgba(58, 58, 65, 0.2) 0px 7px 29px 0px;
+}
+.about-foods p {
+  margin: 10px 0;
+}
