@@ -1,17 +1,22 @@
-.modal-button {
+button.modal-button {
   width: 80px;
   height: 40px;
   border-radius: 15px;
   border: none;
   cursor: pointer;
 }
-
-.modal-button.modal-button-close {
+button.modal-button:disabled {
+  background-color: rgb(146, 146, 146);
+  color: white;
+}
+button.modal-button-close {
   background-color: white;
   color: rgb(160, 0, 0);
-  border: 1.5px solid rgb(160, 0, 0);
+  border: 1.9px solid rgb(160, 0, 0);
+  margin: auto 2px;
 }
-.modal-button.modal-button-order {
+button.modal-button-order {
   background-color: rgb(160, 0, 0);
   color: white;
+  margin: auto 2px;
 }

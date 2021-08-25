@@ -1,0 +1,33 @@
+.modal-form {
+  width: 95%;
+  margin: 5p auto;
+}
+.modal-form input {
+  width: 100%;
+  display: block;
+  height: 30px;
+  border: none;
+
+  border-radius: 2px;
+}
+.input-wraper {
+  margin: 6px auto;
+  border-bottom: 1.5px solid rgb(128, 128, 128);
+  width: 50%;
+}
+
+.input-wraper.input-invalid input {
+  background-color: rgba(160, 0, 0, 0.178);
+}
+
+.modal-form input:focus {
+  border: 1px solid rgb(160, 0, 0);
+  outline: none;
+}
+.button-wraper {
+  width: 50%;
+  margin: 10px auto 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
