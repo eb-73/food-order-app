@@ -14,7 +14,7 @@ const Main = () => {
       </div>
 
       <div className="about-foods">
-        <h1>Delicious Fodd, Delivered To You</h1>
+        <h1>Delicious Food, Delivered To You</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus

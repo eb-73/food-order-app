@@ -19,7 +19,7 @@
   left: 0;
   right: 0;
   top: 15%;
-  overflow-y: scroll;
+  overflow-y: auto;
   /* bottom: 0; */
   z-index: 100;
   display: flex;
@@ -59,4 +59,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+p.done-message {
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
 }

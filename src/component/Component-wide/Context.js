@@ -2,33 +2,22 @@ import React, { useState } from "react";
 const Context = React.createContext({
   num: "",
   animationFlag: false,
-  addNumToSellBox: () => {},
-  addItemToModal: () => {},
-  modalQuality: () => {},
+  addNumToSellBox() {},
+  addItemToModal() {},
+  modalQuality() {},
+  clearProductsModal() {},
   productsModal: "",
 });
 export const ContextCom = (props) => {
-  const [order, setNum] = useState({
-    number: "0",
-    animationFlag: false,
-  });
+  const [displayAnimation, setDisplayAnimation] = useState(false);
+  const [totalQuality, setTotalQuality] = useState(0);
 
   const [productModal, setProductModal] = useState([]);
-  const addNumToSellBox = (Num, flag) => {
-    setNum((prevValue) => {
-      return {
-        ...prevValue,
-        number: +Num + +prevValue.number,
-        animationFlag: flag,
-      };
-    });
+  const addNumToSellBox = (flag) => {
+    setDisplayAnimation(flag);
+
     setTimeout(() => {
-      setNum((prevValue) => {
-        return {
-          ...prevValue,
-          animationFlag: false,
-        };
-      });
+      setDisplayAnimation(false);
     }, 350);
   };
   const addItemToModal = (Food, numOfFood) => {
@@ -46,6 +35,7 @@ export const ContextCom = (props) => {
         return [...prevValue, { ...Food, quality: numOfFood }];
       }
     });
+    setTotalQuality((prevValue) => +prevValue + +numOfFood);
   };
   const modalQuality = (func, id) => {
     if (func === "+") {
@@ -57,25 +47,35 @@ export const ContextCom = (props) => {
           return item;
         })
       );
+      setTotalQuality((prevValue) => +prevValue + 1);
     } else if (func === "-") {
-      setProductModal((prevValue) =>
-        prevValue.map((item) => {
-          if (item.id === id) {
-            if (+item.quality > 1) item.quality = +item.quality - 1;
-          }
-          return item;
-        })
-      );
+      setProductModal((prevValue) => {
+        const statee = [...prevValue];
+        const item = statee.find((item) => item.id === id);
+        const itemIndex = statee.findIndex((item) => item.id === id);
+        if (item.quality > 1) {
+          statee[itemIndex].quality = +item.quality - 1;
+        } else if (item.quality == 1) {
+          statee.splice(itemIndex, 1);
+        }
+        return [...statee];
+      });
+      setTotalQuality((prevValue) => +prevValue - 1);
     }
+  };
+
+  const clearProductsModal = () => {
+    setProductModal([]);
   };
   return (
     <Context.Provider
       value={{
-        num: order.number,
-        animationFlag: order.animationFlag,
+        num: totalQuality,
+        animationFlag: displayAnimation,
         addNumToSellBox: addNumToSellBox,
         addItemToModal: addItemToModal,
         modalQuality: modalQuality,
+        clearProductsModal: clearProductsModal,
         productsModal: productModal,
       }}
     >

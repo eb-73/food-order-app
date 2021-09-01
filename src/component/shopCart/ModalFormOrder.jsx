@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import "../../css/UI-Modal/ModalFormOrder.css";
 import ButtonModal from "./ButtonModal";
 import useInput from "../../hooks/UseInput";
+import Context from "../Component-wide/Context";
+
 const ModalFormOrder = (props) => {
+  const ctxModalForm = useContext(Context);
+
   const [
     inputNameValue,
     inValidInputName,
@@ -49,6 +53,24 @@ const ModalFormOrder = (props) => {
     inputStreetOnSubmit();
     inputCityOnSubmit();
     inputPostalCodeOnSubmit();
+    fetch(
+      "https://react-practice-6a8fa-default-rtdb.firebaseio.com/orderMeals.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          orderList: { ...ctxModalForm.productsModal },
+          userInfo: {
+            name: inputNameValue,
+            street: inputStreetValue,
+            city: inputCityValue,
+            postalCode: inputPostalCodeValue,
+          },
+        }),
+      }
+    ).then(() => {
+      ctxModalForm.clearProductsModal();
+      props.onDone();
+    });
   };
   return (
     <form onSubmit={submitHandler} className="modal-form">

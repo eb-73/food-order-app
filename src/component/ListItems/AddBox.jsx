@@ -10,7 +10,7 @@ const AddBox = (props) => {
   };
   const SubmitHandler = (e) => {
     e.preventDefault();
-    ctx.addNumToSellBox(orderNum, true);
+    ctx.addNumToSellBox(true);
     ctx.addItemToModal(props.item, orderNum);
   };
   return (
